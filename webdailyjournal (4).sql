@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Jan 2025 pada 16.22
+-- Waktu pembuatan: 12 Jan 2025 pada 10.58
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -51,6 +51,32 @@ INSERT INTO `article` (`id`, `judul`, `isi`, `gambar`, `tanggal`, `username`) VA
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `gallery`
+--
+
+CREATE TABLE `gallery` (
+  `id` int(11) NOT NULL,
+  `judul` text NOT NULL,
+  `gambar` text NOT NULL,
+  `tanggal` datetime NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `isi` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `gallery`
+--
+
+INSERT INTO `gallery` (`id`, `judul`, `gambar`, `tanggal`, `username`, `isi`) VALUES
+(3, 'gambar2', '20250110223227.jpeg', '2025-01-10 22:32:27', 'admin', ''),
+(6, 'gambar3', '20250110223315.jpg', '2025-01-10 22:33:15', 'admin', ''),
+(7, 'gambar4', '20250110223342.jpg', '2025-01-10 22:33:42', 'admin', ''),
+(10, 'gambar5', '20250110223457.jpg', '2025-01-10 22:34:57', 'admin', ''),
+(11, 'gambar6', '20250110224713.jpg', '2025-01-10 22:47:13', 'admin', 'hhh');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `user`
 --
 
@@ -66,8 +92,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `foto`) VALUES
-(1, 'admin', '827ccb0eea8a706c4c34a16891f84e7b', ''),
-(2, 'Zidan Alamsyah', '063294132e07fa9886b7327d095d4226', '');
+(3, 'danny', '21232f297a57a5a743894a0e4a801fc3', 'zidan1'),
+(6, 'agus', 'fdf169558242ee051cca1479770ebac3', 'zidan1'),
+(7, 'sigit', '223a0fa8f15933d622b3c7a13f186027', 'zidan1'),
+(10, 'rudi', '1755e8df56655122206c7c1d16b1c7e3', 'zidan1'),
+(11, 'budi', '00dfc53ee86af02e742515cdcf075ed3', 'zidan1'),
+(14, 'andi', 'ce0e5bf55e4f71749eade7a8b95c4e46', 'zidan1'),
+(17, 'admin', '827ccb0eea8a706c4c34a16891f84e7b', '20250112151053.jpeg');
 
 --
 -- Indexes for dumped tables
@@ -77,6 +108,12 @@ INSERT INTO `user` (`id`, `username`, `password`, `foto`) VALUES
 -- Indeks untuk tabel `article`
 --
 ALTER TABLE `article`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `gallery`
+--
+ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -96,10 +133,16 @@ ALTER TABLE `article`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT untuk tabel `gallery`
+--
+ALTER TABLE `gallery`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

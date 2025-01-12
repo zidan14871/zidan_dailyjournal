@@ -108,7 +108,7 @@ if (isset($_POST['logout'])) {
                         </div>
 
                         <div class="mb-3">
-                            <label for="gambarLama" class="form-label">Foto Profil Lama</label><br>
+                            <label for="gambarLama" class="form-label">Foto Profil</label><br>
                             <?php if ($user['foto']) { ?>
                                 <img src="img/<?= $user['foto'] ?>" width="100">
                             <?php } else { ?>
